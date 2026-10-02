@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b811e3f0-202e-4e57-a562-cc5fe1e612fe" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../ak/lab3/acc32/lower_case_cstr.s" beforeDir="false" afterPath="$PROJECT_DIR$/../../ak/lab3/acc32/lower_case_cstr.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ak/lab3/acc32/lower_case_cstr_formatted.s" beforeDir="false" afterPath="$PROJECT_DIR$/../../ak/lab3/acc32/lower_case_cstr_formatted.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ak/lab3/acc32/test_hello.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ak/lab3/acc32/test_hello.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ak/lab3/test.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ak/lab4/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ak/lab4/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab1/deploy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../lab1/deploy.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab1/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../lab1/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab1/src/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/../lab1/src/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpd.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/.gradle/9.6.0/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/.gradle/9.6.0/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/.gradle/9.6.0/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/.gradle/9.6.0/expanded/expanded.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/.gradle/9.6.0/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/.gradle/9.6.0/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/.gradle/9.6.0/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/.gradle/9.6.0/fileHashes/resourceHashesCache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/.gradle/9.6.0/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/.gradle/file-system.probe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/.idea/libraries/fastcgi_lib.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/build/classes/java/main/AreaChecker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/build/classes/java/main/FastCGIServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/build/classes/java/main/HttpResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/build/classes/java/main/JsonUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/build/libs/lab1_fastcgi-1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/build/reports/problems/problems-report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/build/tmp/jar/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/lab1_fastcgi.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/lib/fastcgi-lib.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/src/AreaChecker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/src/FastCGIServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/src/HttpResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1_fastcgi/src/JsonUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_lab1" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "tetraminomusic"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:tetraminomusic/itmo_sem3.git",
+    "accountId": "9bb4527e-4008-4e81-9897-6712c34b77ad"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6,
+  "fromUser": false
+}]]></component>
+  <component name="ProjectId" id="3K8PvsxCckfVLtzIzxQkOP27Cj9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.jshint": "true",
+    "node.js.selected.package.jshint": "",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Project" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-34e2839f716b-intellij.indexing.shared.core-IU-262.9437.185" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.9437.185" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b811e3f0-202e-4e57-a562-cc5fe1e612fe" name="Changes" comment="" />
+      <created>1790936464926</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1790936464926</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
