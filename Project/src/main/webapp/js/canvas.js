@@ -106,7 +106,7 @@ function drawPointsFromTable(currentR) {
             const x = parseFloat(cols[0].innerText);
             const y = parseFloat(cols[1].innerText);
             const r = parseFloat(cols[2].innerText);
-            const isHit = cols[3].innerText.includes("Попадание");
+            const isHit = cols[3].innerText.includes("Хорош");
 
             const xPx = center + x * scale;
             const yPx = center - y * scale;

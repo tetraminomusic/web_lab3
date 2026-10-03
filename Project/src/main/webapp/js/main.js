@@ -43,10 +43,12 @@ function validateValues(x, y, r) {
 
     if (isNaN(y) || y <= -3 || y >= 3) {
         alert('Лее брат надо тыкать Y внутри (-3, 3)')
+        return false;
     }
 
     if (isNaN(r) || r <= 2 || r >= 5) {
         alert('Неет брат слушай R то внутри (2,5) делай лее')
+        return false;
     }
 
     return true;
@@ -73,6 +75,7 @@ canvas.addEventListener('click', function (e) {
 
     if (isNaN(rVal) || rVal <= 2 || rVal >= 5) {
         alert("Ле братка я ни магу R определить сделай его по русски по человечески слыш");
+        return false;
     }
 
     const rect = canvas.getBoundingClientRect();
@@ -94,7 +97,7 @@ canvas.addEventListener('click', function (e) {
 window.addEventListener('DOMContentLoaded', () => {
     const initialR = parseFloat(rInput.value.trim().replace(',', '.'));
 
-    if (!isNaN(initialR && initialR > 2 && initialR < 5)) {
+    if (!isNaN(initialR) && initialR > 2 && initialR < 5) {
         redrawCanvas(initialR);
     }
 });

@@ -25,7 +25,7 @@ public class ControllerServlet extends HttpServlet {
         if (xParam != null && yParam != null && rParam != null && !xParam.trim().isEmpty() && !yParam.trim().isEmpty() && !rParam.trim().isEmpty()) {
             // параметры есть круто топчик
             // отправляем работать area checker, пусть не мается хернёй правильно
-            request.getRequestDispatcher("/area-checker").forward(request, response);
+            request.getRequestDispatcher("/area-check").forward(request, response);
         } else {
             // параметров нет блина это плохо очень
             // ну кидаем пользователю статику в виде странички
