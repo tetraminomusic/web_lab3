@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ru">
     <head>
@@ -10,7 +9,7 @@
         <title>Лабораторная работа 3 by tetramino</title>
 
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
-                <link rel="stylesheet" href="${pageContext.request.contextPath}/css/mobile.css" media="(max-width: 767px)">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/mobile.css" media="(max-width: 767px)">
     </head>
     <body>
 
