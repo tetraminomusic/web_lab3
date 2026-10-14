@@ -94,7 +94,7 @@
         </table>
 
         <!--Вывод результатов проверки -->
-        <table class="results-table" id="resultsTable">
+        <table class="results-table" id="resultsTable" style="display: table;">
           <thead>
               <tr>
                   <th>X</th>

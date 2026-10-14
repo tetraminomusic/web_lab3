@@ -48,7 +48,7 @@ function validateValues(xStr, yStr, rStr) {
     }
 
     const xVal = parseFloat(xStr);
-    if (xVal <= -3 || xVal >= 5) {
+    if (xVal < -3 || xVal > 5) {
         alert('Брат, X должен быть от -3 до 5!');
         return false;
     }
@@ -98,9 +98,14 @@ pointForm.addEventListener('submit', function(e) {
     const yStr = yInput.value.trim().replace(',', '.');
     const rStr = rInput.value.trim().replace(',', '.');
 
+    if (yStr.length >= 10) {
+        alert("бубубу");
+        return;
+    }
+
     if (validateValues(xStr, yStr, rStr)) {
         const contextPath = window.location.pathname.substring(0, window.location.pathname.indexOf('/', 1));
-        const url = `${contextPath}/controller?x=${parseFloat(xStr)}&y=${parseFloat(yStr)}&r=${parseFloat(rStr)}`;
+        const url = `${contextPath}/controller?x=${encodeURIComponent(xStr)}&y=${encodeURIComponent(yStr)}&r=${encodeURIComponent(rStr)}`;
         window.location.href = url;
     }
 });
@@ -110,6 +115,11 @@ pointForm.addEventListener('submit', function(e) {
  */
 canvas.addEventListener('click', function (e) {
     const rStr = rInput.value.trim().replace(',', '.');
+
+    if (rStr.length >= 10) {
+        alert("бла бла");
+        return;
+    }
 
     if (!rStr || !/^-?\d+(\.\d+)?$/.test(rStr) || parseFloat(rStr) <= 2 || parseFloat(rStr) >= 5) {
         alert("Ле братка я ни магу R определить сделай его по русски по человечески слыш");

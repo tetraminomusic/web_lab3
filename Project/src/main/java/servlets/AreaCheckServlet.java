@@ -30,7 +30,7 @@ public class AreaCheckServlet extends HttpServlet {
             double y = Double.parseDouble((yStr.trim().replace(',', '.')));
             double r = Double.parseDouble(rStr.trim().replace(',', '.'));
 
-            AreaChecker.validate(x, y, r);
+            AreaChecker.validate(x, y, r, yStr, rStr);
 
             boolean hit = AreaChecker.checkHit(x, y, r);
 
