@@ -12,7 +12,6 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-// Эта аннотация нужна, что автоматически url связать с этим классом, топ
 @WebServlet(name = "AreaCheckServlet", value = "/area-check")
 public class AreaCheckServlet extends HttpServlet {
 
@@ -46,10 +45,9 @@ public class AreaCheckServlet extends HttpServlet {
             // пробуем достать наши точки
             ResultsBean resultsBean = (ResultsBean) session.getAttribute("results");
 
-            // если первый раз в первый класс ёпта
+            // если первый раз в первый класс
             if (resultsBean == null) {
                 resultsBean = new ResultsBean();
-
                 session.setAttribute("results", resultsBean);
             }
 
@@ -60,7 +58,7 @@ public class AreaCheckServlet extends HttpServlet {
             //перенаправляем на страницу результатов
             request.getRequestDispatcher("/result.jsp").forward(request, response);
         } catch (NumberFormatException e) {
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Координаты должны быть числами!");
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Коорды должны быть числами");
         } catch (IllegalArgumentException e) {
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
         }

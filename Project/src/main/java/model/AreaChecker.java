@@ -19,7 +19,7 @@ public class AreaChecker {
             throw new IllegalArgumentException("X должен быть в пределах [-3 ... 5]");
         }
 
-        if (y <= -3 || y >= 3) {
+        if (y < -3 || y > 3) {
             throw new IllegalArgumentException("Y должен быть в диапазоне (-3 ... 3)");
         }
     }

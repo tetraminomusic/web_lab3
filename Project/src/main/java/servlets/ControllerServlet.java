@@ -5,12 +5,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(name = "ControllerServlet", value = "/controller")
 public class ControllerServlet extends HttpServlet {
-
     /**
      * Выполнение транзакции запроса с методом GET
      */
@@ -31,9 +29,6 @@ public class ControllerServlet extends HttpServlet {
             // параметров нет блина это плохо очень
             // ну кидаем пользователю статику в виде странички
             request.getRequestDispatcher("/index.jsp").forward(request, response);
-
         }
-
-
     }
 }

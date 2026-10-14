@@ -96,9 +96,9 @@ button[type="submit"]:active {
 }
 
 table.results-table {
-    width: 100%;
     border-collapse: collapse;
-    margin-top: 25px;
+    margin-left: auto !important;
+    margin-right: auto !important;
     text-align: center;
 }
 

@@ -24,7 +24,7 @@
 
         <h2 style="color: #2c3e50; margin-top: 0;">Результат вычислений</h2>
 
-        <table class="results-table" style="margin-top: 15px;">
+        <table class="results-table" style="margin: 15px auto; width: 100%; max-width: 450px;">
             <thead>
                 <tr>
                     <th>Параметр</th>

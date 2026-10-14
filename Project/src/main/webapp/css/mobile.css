@@ -40,15 +40,23 @@ input[type="text"], select, .checkbox-container {
 }
 
 table.results-table {
-  display: block;
   overflow-x: auto;
   white-space: nowrap;
-  font-size: 12px;
-  margin-top: 15px;
+  margin: 15px auto 0 auto;
+  width: fit-content;
+  max-width: 100%;
+  text-aligh: center;
 }
 
 table.results-table > thead > tr > th,
 table.results-table td {
   padding: 8px 10px;
+  text-align: center;
+}
+
+div[style*="max-width: 600px"] table.results-table {
+  display: table !important;
+  width: 100% !important;
+  margin: 15px auto !important;
 }
 

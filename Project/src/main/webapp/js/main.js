@@ -23,7 +23,7 @@ rInput.addEventListener('input', function() {
 
     if (/^-?\d+(\.\d+)?$/.test(rStr)) {
         const rVal = parseFloat(rStr);
-        if (rVal > 2 && rVal < 5) {
+        if (rVal >= 2 && rVal <= 5) {
             redrawCanvas(rVal);
             return;
         }
@@ -48,7 +48,7 @@ function validateValues(xStr, yStr, rStr) {
     }
 
     const xVal = parseFloat(xStr);
-    if (xVal < -3 || xVal > 5) {
+    if (xVal <= -3 || xVal >= 5) {
         alert('Брат, X должен быть от -3 до 5!');
         return false;
     }
@@ -65,7 +65,7 @@ function validateValues(xStr, yStr, rStr) {
 
     const yVal = parseFloat(yStr);
     if (yVal <= -3 || yVal >= 3) {
-        alert('Лее брат надо тыкать Y внутри (-3, 3)');
+        alert('Лее брат надо тыкать Y внутри [-3, 3]');
         return false;
     }
 
@@ -81,7 +81,7 @@ function validateValues(xStr, yStr, rStr) {
 
     const rVal = parseFloat(rStr);
     if (rVal <= 2 || rVal >= 5) {
-        alert('Неет брат слушай R то внутри (2,5) делай лее');
+        alert('Неет брат слушай R то внутри [2,5] делай лее');
         return false;
     }
 
@@ -121,8 +121,8 @@ canvas.addEventListener('click', function (e) {
     const clickX = e.clientX - rect.left;
     const clickY = e.clientY - rect.top;
 
-    const mathX = ((clickX - center) / scale).toFixed(2);
-    const mathY = ((center - clickY) / scale).toFixed(2);
+    const mathX = ((clickX - center) / scale);
+    const mathY = ((center - clickY) / scale);
 
     const contextPath = window.location.pathname.substring(0, window.location.pathname.indexOf('/', 1));
     const url = `${contextPath}/controller?x=${mathX}&y=${mathY}&r=${rVal}`;
@@ -135,7 +135,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if (/^-?\d+(\.\d+)?$/.test(rStr)) {
         const initialR = parseFloat(rStr);
-        if (initialR > 2 && initialR < 5) {
+        if (initialR >= 2 && initialR <= 5) {
             redrawCanvas(initialR);
         }
     }
