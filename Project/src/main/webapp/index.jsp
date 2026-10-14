@@ -30,7 +30,7 @@
               <!-- Левая колонвка c графиком -->
 
               <td class="column" style="width: 60%; text-align: center;">
-                <canvas id="graphCanvas" width="800" height="800"></canvas>
+                <canvas id="graphCanvas" width="400" height="400"></canvas>
               </td>
 
               <!--Правая колонка -->
@@ -58,6 +58,7 @@
                                 <button type="button" class="x-btn" value="4">4</button>
                                 <button type="button" class="x-btn" value="5">5</button>
                             </div>
+                            <div id="x_error" class="error-msg"></div>
                           </td>
                         </tr>
 
@@ -67,7 +68,8 @@
                               <strong>Изменение Y:</strong>
                           </td>
                           <td>
-                              <input type="text" id="y_val" name="y" placeholder="Число от -3 до 3" required>
+                              <input type="text" id="y_val" name="y" placeholder="(-3 ... 3)" autocomplete="off">
+                              <div id="y_error" class="error-msg"></div>
                           </td>
                         </tr>
 
@@ -77,7 +79,8 @@
                                 <strong>Изменение R:</strong>
                             </td>
                             <td>
-                                <input type="text" id="r_val" name="r" placeholder="Число от 2 до 5" required>
+                                <input type="text" id="r_val" name="r" placeholder="(2 ... 5)" autocomplete="off">
+                                <div id="r_error" class="error-msg"></div>
                             </td>
                         </tr>
 

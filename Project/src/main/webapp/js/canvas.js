@@ -136,6 +136,24 @@ function redrawCanvas(r) {
     }
     drawAxes();
     drawPointsFromTable(r);
+    logGraphMetrics(r);
 }
 
 redrawCanvas(null);
+
+function logGraphMetrics(r) {
+    const rect = canvas.getBoundingClientRect();
+
+    console.group(`R = ${r !== null && !isNaN(r) ? r : 'не задан'}`);
+    if (r !== null && !isNaN(r) && r >= 2 && r <= 5) {
+        const radiusPx = (r * scale).toFixed(2);
+        const halfRadiusPx = ((r / 2) * scale).toFixed(2);
+
+        console.log(`Круг: радиус = ${radiusPx} px`);
+        console.log(`Треугольник: катеты = ${radiusPx}x${radiusPx} px`);
+        console.log(`Прямоугольник: ширина = ${halfRadiusPx} px, высота = ${radiusPx} px`);
+    } else {
+        console.log(`Область не построена R вне диапазона (2 ... 5)`);
+    }
+    console.groupEnd();
+}

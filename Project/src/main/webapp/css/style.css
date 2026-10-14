@@ -202,3 +202,36 @@ table.results-table td {
     color: #ef4444;
     font-weight: bold;
 }
+
+
+button[type="submit"]:disabled {
+    background-color: #94a3b8 !important;
+    border-color: #cbd5e1 !important;
+    cursor: not-allowed !important;
+    opacity: 0.6;
+}
+
+.graph-info-box {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #475569;
+    background-color: #f1f5f9;
+    padding: 6px 12px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.error-msg {
+    color: #dc2626;
+    font-size: 12px;
+    min-height: 16px;
+    margin-top: 2px;
+    font-weight: 500;
+}
+
+button[type="submit"]:disabled {
+    background-color: #94a3b8 !important;
+    border-color: #cbd5e1 !important;
+    cursor: not-allowed !important;
+    opacity: 0.6;
+}
