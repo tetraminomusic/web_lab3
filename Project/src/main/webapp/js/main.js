@@ -8,6 +8,7 @@ const submitBtn = document.getElementById('submitBtn');
 const xError = document.getElementById('x_error');
 const yError = document.getElementById('y_error');
 const rError = document.getElementById('r_error');
+const canvasError = document.getElementById('canvas_error');
 
 const MAX_FRACTION_DIGITS = 5;
 
@@ -84,9 +85,9 @@ function checkR(showError = true) {
 }
 
 function updateSubmitState() {
-    const okX = checkX(false);
     const okY = checkY(yTouched);
     const okR = checkR(rTouched);
+    const okX = checkX(okY && okR);
 
     if (submitBtn) {
         submitBtn.disabled = !(okX && okY && okR);
@@ -156,8 +157,7 @@ pointForm.addEventListener('submit', function(e) {
     const yStr = yInput.value.trim().replace(',', '.');
     const rStr = rInput.value.trim().replace(',', '.');
 
-    const contextPath = window.location.pathname.substring(0, window.location.pathname.indexOf('/', 1));
-    const url = `${contextPath}/controller?x=${encodeURIComponent(xStr)}&y=${encodeURIComponent(yStr)}&r=${encodeURIComponent(rStr)}`;
+    const url = `${pointForm.getAttribute('action')}?x=${encodeURIComponent(xStr)}&y=${encodeURIComponent(yStr)}&r=${encodeURIComponent(rStr)}`;
     window.location.href = url;
 });
 
@@ -175,15 +175,20 @@ canvas.addEventListener('click', function (e) {
     const rVal = parseFloat(rStr);
 
     const rect = canvas.getBoundingClientRect();
-    const clickX = e.clientX - rect.left;
-    const clickY = e.clientY - rect.top;
+    const clickX = (e.clientX - rect.left) * width / rect.width;
+    const clickY = (e.clientY - rect.top) * height / rect.height;
 
     const mathX = Number(((clickX - center) / scale).toFixed(MAX_FRACTION_DIGITS));
     const mathY = Number(((center - clickY) / scale).toFixed(MAX_FRACTION_DIGITS));
 
+    if (mathX < -3 || mathX > 5 || mathY <= -3 || mathY >= 3) {
+        if (canvasError) canvasError.innerText = 'Брат точка должна быть в X [-3 ... 5] и Y (-3 ... 3)';
+        return;
+    }
+    if (canvasError) canvasError.innerText = "";
+
     // отправка запроса контроллер сервлету
-    const contextPath = window.location.pathname.substring(0, window.location.pathname.indexOf('/', 1));
-    const url = `${contextPath}/controller?x=${mathX}&y=${mathY}&r=${rVal}`;
+    const url = `${pointForm.getAttribute('action')}?x=${mathX}&y=${mathY}&r=${rVal}`;
 
     //переход по ссылке на корвлет
     window.location.href = url;

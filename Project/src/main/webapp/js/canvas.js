@@ -6,8 +6,10 @@ const dpr = window.devicePixelRatio || 1;
 canvas.width = logicalSize * dpr;
 canvas.height = logicalSize * dpr;
 
-canvas.style.width = logicalSize + 'px';
-canvas.style.height = logicalSize + 'px';
+canvas.style.width = '100%';
+canvas.style.maxWidth = logicalSize + 'px';
+canvas.style.height = 'auto';
+canvas.style.aspectRatio = '1 / 1';
 
 ctx.scale(dpr, dpr);
 
@@ -15,6 +17,9 @@ const width = logicalSize;
 const height = logicalSize;
 const center = width / 2;
 const scale = 36; // масштаб под сетку -5, 5
+const graphInfo = document.getElementById('graphInfo');
+const SIZE_DIGITS = 5;
+let currentR = null;
 
 function drawShape(r) {
     ctx.clearRect(0, 0, width, height);
@@ -101,12 +106,11 @@ function drawPointsFromTable(currentR) {
     const rows = document.querySelectorAll("#resultsTable tbody tr");
 
     rows.forEach(row => {
-        const cols = row.querySelectorAll("td");
-        if (cols.length >= 4) {
-            const x = parseFloat(cols[0].innerText);
-            const y = parseFloat(cols[1].innerText);
-            const r = parseFloat(cols[2].innerText);
-            const isHit = cols[3].innerText.includes("Хорош");
+        if (row.dataset.x !== undefined) {
+            const x = parseFloat(row.dataset.x);
+            const y = parseFloat(row.dataset.y);
+            const r = parseFloat(row.dataset.r);
+            const isHit = row.dataset.hit === 'true';
 
             const xPx = center + x * scale;
             const yPx = center - y * scale;
@@ -128,8 +132,13 @@ function drawPointsFromTable(currentR) {
     });
 }
 
+function isValidR(r) {
+    return r !== null && !isNaN(r) && r > 2 && r < 5;
+}
+
 function redrawCanvas(r) {
-    if (r && !isNaN(r) && r >= 2 && r <= 5) {
+    currentR = r;
+    if (isValidR(r)) {
         drawShape(r);
     } else {
         ctx.clearRect(0, 0, width, height);
@@ -141,19 +150,58 @@ function redrawCanvas(r) {
 
 redrawCanvas(null);
 
-function logGraphMetrics(r) {
+function formatPx(value) {
+    return Number(value.toFixed(SIZE_DIGITS));
+}
+
+function getGraphMetrics(r) {
     const rect = canvas.getBoundingClientRect();
+    const displayRatio = rect.width / width;
+
+    return {
+        radius: formatPx(r * scale * displayRatio),
+        halfRadius: formatPx((r / 2) * scale * displayRatio),
+        radiusPhysical: formatPx(r * scale * displayRatio * dpr),
+        halfRadiusPhysical: formatPx((r / 2) * scale * displayRatio * dpr),
+        canvasSize: formatPx(rect.width)
+    };
+}
+
+function updateGraphInfo(r) {
+    if (!graphInfo) return;
+
+    if (!isValidR(r)) {
+        graphInfo.textContent =
+            'R вне диапазона (2 ... 5)\n' +
+            'Круг: —\n' +
+            'Треугольник: —\n' +
+            'Прямоугольник: —';
+        return;
+    }
+
+    const m = getGraphMetrics(r);
+    graphInfo.textContent =
+        `R = ${r}, график ${m.canvasSize}x${m.canvasSize} px\n` +
+        `Круг: радиус ${m.radius} px\n` +
+        `Треугольник: катеты ${m.radius}x${m.radius} px\n` +
+        `Прямоугольник: ${m.halfRadius}x${m.radius} px`;
+}
+
+function logGraphMetrics(r) {
+    updateGraphInfo(r);
 
     console.group(`R = ${r !== null && !isNaN(r) ? r : 'не задан'}`);
-    if (r !== null && !isNaN(r) && r >= 2 && r <= 5) {
-        const radiusPx = (r * scale).toFixed(2);
-        const halfRadiusPx = ((r / 2) * scale).toFixed(2);
+    if (isValidR(r)) {
+        const m = getGraphMetrics(r);
 
-        console.log(`Круг: радиус = ${radiusPx} px`);
-        console.log(`Треугольник: катеты = ${radiusPx}x${radiusPx} px`);
-        console.log(`Прямоугольник: ширина = ${halfRadiusPx} px, высота = ${radiusPx} px`);
+        console.log(`График: ${m.canvasSize}x${m.canvasSize} px, devicePixelRatio = ${dpr}`);
+        console.log(`Круг: радиус = ${m.radius} px (${m.radiusPhysical} физ. px)`);
+        console.log(`Треугольник: катеты = ${m.radius}x${m.radius} px (${m.radiusPhysical}x${m.radiusPhysical} физ. px)`);
+        console.log(`Прямоугольник: ширина = ${m.halfRadius} px, высота = ${m.radius} px (${m.halfRadiusPhysical}x${m.radiusPhysical} физ. px)`);
     } else {
         console.log(`Область не построена R вне диапазона (2 ... 5)`);
     }
     console.groupEnd();
 }
+
+window.addEventListener('resize', () => updateGraphInfo(currentR));

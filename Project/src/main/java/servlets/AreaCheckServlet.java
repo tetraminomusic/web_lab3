@@ -21,16 +21,12 @@ public class AreaCheckServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         long startTime = System.nanoTime();
 
-        String xStr = request.getParameter("x");
-        String yStr = request.getParameter("y");
-        String rStr = request.getParameter("r");
-
         try {
-            double x = Double.parseDouble(xStr.trim().replace(',', '.'));
-            double y = Double.parseDouble((yStr.trim().replace(',', '.')));
-            double r = Double.parseDouble(rStr.trim().replace(',', '.'));
+            double x = AreaChecker.parse(request.getParameter("x"), "X");
+            double y = AreaChecker.parse(request.getParameter("y"), "Y");
+            double r = AreaChecker.parse(request.getParameter("r"), "R");
 
-            AreaChecker.validate(x, y, r, yStr, rStr);
+            AreaChecker.validate(x, y, r);
 
             boolean hit = AreaChecker.checkHit(x, y, r);
 
@@ -57,8 +53,6 @@ public class AreaCheckServlet extends HttpServlet {
 
             //перенаправляем на страницу результатов
             request.getRequestDispatcher("/result.jsp").forward(request, response);
-        } catch (NumberFormatException e) {
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Коорды должны быть числами");
         } catch (IllegalArgumentException e) {
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
         }

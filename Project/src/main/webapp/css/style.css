@@ -23,8 +23,9 @@ body {
 }
 
 table.main-layout {
-    width: 100%;
-    border-collapse: collapse;
+    width: calc(100% + 40px);
+    margin: 0 -20px;
+    border-collapse: separate;
     border-spacing: 20px 0;
 }
 
@@ -39,6 +40,7 @@ table.main-layout td.column {
 /*Селектор*/
 input[type="text"], select {
     width: 220px;
+    height: 40px;
     padding: 10px 14px;
     margin: 0px;
     border: 1.5px solid #cbd5e1;
@@ -62,9 +64,7 @@ input[type="text"]::placeholder {
 }
 
 .button-cell {
-    display: flex;
-    justify-content: center;
-    padding-top: 20px;
+    padding-top: 4px;
 }
 
 button[type="submit"] {
@@ -77,6 +77,7 @@ button[type="submit"] {
     border: none;
     border-radius: 6px;
     cursor: pointer;
+    white-space: nowrap;
 }
 
 button[type="submit"]:hover {
@@ -93,6 +94,16 @@ button[type="submit"]:active {
     height: 16px;
     margin-right: 4px;
     accent-color: #2563eb;
+}
+
+.results-wrapper {
+    width: 100%;
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+#resultsTable {
+    width: 100%;
 }
 
 table.results-table {
@@ -119,14 +130,23 @@ table.results-table td {
     background-color: white;
 }
 
+#pointForm table.form-table {
+    margin: 0 auto;
+    text-align: left;
+    border-collapse: collapse;
+}
+
 #pointForm table td {
-    padding: 12px 8px;
-    vertical-align: middle;
+    padding: 6px 10px;
+    vertical-align: top;
 }
 
 #pointForm strong {
+    display: inline-block;
     color: #1e293b;
     font-size: 15px;
+    line-height: 40px;
+    white-space: nowrap;
 }
 
 .checkbox-container {
@@ -151,19 +171,22 @@ table.results-table td {
 }
 
 #pointForm button[type="submit"] {
-    display: inline-block !important;
-    margin: 15px auto 0 auto !important;
+    display: block !important;
+    width: 220px;
+    height: 44px;
+    margin: 0 !important;
 }
 
 .x-buttons {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     gap: 6px;
-    max-width: 260px;
+    width: 220px;
 }
 
 .x-btn {
-    padding: 8px 12px;
+    height: 40px;
+    padding: 0;
     background-color: #f1f5f9;
     color: #1e293b;
     border: 1.5px solid #cbd5e1;
@@ -186,11 +209,21 @@ table.results-table td {
 }
 
 .error-msg {
-    color: #ef4444;
-    font-size: 13px;
+    color: #dc2626;
+    font-size: 12px;
+    line-height: 14px;
     display: block;
-    margin-top: 4px;
+    height: 42px;
+    margin-top: 2px;
     font-weight: 500;
+}
+
+#canvas_error {
+    height: 28px;
+}
+
+#pointForm .error-msg {
+    width: 220px;
 }
 
 .hit-text {
@@ -219,19 +252,7 @@ button[type="submit"]:disabled {
     padding: 6px 12px;
     border-radius: 6px;
     display: inline-block;
-}
-
-.error-msg {
-    color: #dc2626;
-    font-size: 12px;
-    min-height: 16px;
-    margin-top: 2px;
-    font-weight: 500;
-}
-
-button[type="submit"]:disabled {
-    background-color: #94a3b8 !important;
-    border-color: #cbd5e1 !important;
-    cursor: not-allowed !important;
-    opacity: 0.6;
+    white-space: pre-line;
+    line-height: 1.6;
+    min-height: calc(4 * 1.6em);
 }

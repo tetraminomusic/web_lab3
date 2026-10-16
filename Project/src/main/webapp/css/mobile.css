@@ -10,11 +10,15 @@ body {
   padding: 10px;
 }
 
-table.main-layout, table.main-layout tbody, table.main-layout tr,
-table.main-layout td.column {
+table.main-layout, table.main-layout > tbody, table.main-layout > tbody > tr,
+table.main-layout > tbody > tr > td.column {
   display: block;
   width: 100% !important;
   box-sizing: border-box;
+}
+
+table.main-layout {
+  margin: 0;
 }
 
 table.main-layout td.column:first-child {
@@ -25,20 +29,40 @@ table.main-layout td.column {
   padding: 15px;
 }
 
-#graphCanvas {
-  max-width: 100%; height: auto;
-}
 
-input[type="text"], select, .checkbox-container {
+input[type="text"], select, .checkbox-container, .x-buttons,
+#pointForm button[type="submit"], #pointForm .error-msg {
   width: 100%; max-width: 220px;
 }
 
+#pointForm table.form-table {
+  width: 100%;
+  max-width: 340px;
+  table-layout: fixed;
+}
+
+#pointForm table.form-table td:first-child {
+  width: 96px;
+}
+
+#pointForm table td {
+  padding: 6px 4px;
+}
+
+#pointForm strong {
+  font-size: 14px;
+  white-space: normal;
+  line-height: 18px;
+  padding-top: 11px;
+}
+
+.results-wrapper {
+  margin-top: 15px;
+}
+
 table.results-table {
-  display: inline;
-  overflow-x: auto;
   white-space: nowrap;
   font-size: 12px;
-  margin-top: 15px;
 }
 
 table.results-table > thead > tr > th, table.results-table td {

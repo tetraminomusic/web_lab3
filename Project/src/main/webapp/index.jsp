@@ -31,13 +31,15 @@
 
               <td class="column" style="width: 60%; text-align: center;">
                 <canvas id="graphCanvas" width="400" height="400"></canvas>
+                <div id="canvas_error" class="error-msg"></div>
+                <div id="graphInfo" class="graph-info-box"></div>
               </td>
 
               <!--Правая колонка -->
 
               <td class="column" style="width: 40%;">
                 <form id="pointForm" action="${pageContext.request.contextPath}/controller" method="GET">
-                    <table style="width: 100%;">
+                    <table class="form-table">
 
                         <!--Про X -->
                         <tr>
@@ -86,8 +88,9 @@
 
                         <!--Кнопка отправки-->
                         <tr>
-                          <td colspan="2" class="button-cell">
-                              <button type="submit" id="submitBtn">Проверить точку</button>
+                          <td></td>
+                          <td class="button-cell">
+                              <button type="submit" id="submitBtn" disabled>Проверить точку</button>
                           </td>
                         </tr>
                     </table>
@@ -97,7 +100,8 @@
         </table>
 
         <!--Вывод результатов проверки -->
-        <table class="results-table" id="resultsTable" style="display: table;">
+        <div class="results-wrapper">
+        <table class="results-table" id="resultsTable">
           <thead>
               <tr>
                   <th>X</th>
@@ -110,11 +114,11 @@
           </thead>
           <tbody>
             <c:forEach items="${sessionScope.results.points}" var="point">
-                <tr>
+                <tr data-x="${point.x}" data-y="${point.y}" data-r="${point.r}" data-hit="${point.hit}">
                     <td>${point.x}</td>
                     <td>${point.y}</td>
                     <td>${point.r}</td>
-                    <td style="color: ${point.hit ? '#27ae60' : '#e74c3c'}; font-weight: bold;">
+                    <td class="${point.hit ? 'hit-text' : 'miss-text'}">
                         ${point.hit ? 'Попадание' : 'Промах'}
                     </td>
                     <td>${point.checkTime}</td>
@@ -123,6 +127,7 @@
             </c:forEach>
           </tbody>
         </table>
+        </div>
 
         <script src="${pageContext.request.contextPath}/js/canvas.js"></script>
         <script src="${pageContext.request.contextPath}/js/main.js"></script>
